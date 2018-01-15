@@ -1,6 +1,6 @@
 
-user=tshinagawa
-pass=2mecno7v2k
+user=**********
+pass=**********
 export user pass
 
 #JP_Spend
