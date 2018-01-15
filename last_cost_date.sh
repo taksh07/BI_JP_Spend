@@ -15,9 +15,9 @@ $client_id client_id
 , DATE(MAX(spend.YDN)) as YDN_Last
 FROM
 (SELECT
-CASE WHEN kid.publisher_id = 4 AND kif.publisher_cost > 0 THEN te.the_date end as Google
-, CASE WHEN kid.publisher_id = 9 AND kif.publisher_cost > 0 THEN te.the_date end as YJP
-, CASE WHEN kid.publisher_id = 13 and kif.publisher_cost > 0 THEN te.the_date end as YDN
+CASE WHEN kid.publisher_id = 4 AND kif.impressions > 0 THEN te.the_date end as Google
+, CASE WHEN kid.publisher_id = 9 AND kif.impressions > 0 THEN te.the_date end as YJP
+, CASE WHEN kid.publisher_id = 13 and kif.impressions > 0 THEN te.the_date end as YDN
 FROM
 ${kif} kif
 JOIN ${kid} kid on kif.keyword_instance_dim_id=kid.keyword_instance_dim_id
@@ -30,5 +30,5 @@ GROUP BY 1,2,3) as spend
 
 "
 
-mysql -h $server_name  -u $user -p$pass -e "$query" -N
+mysql -h $server_name  -u $user -p $pass -e "$query" -N
 
