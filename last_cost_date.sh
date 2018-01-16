@@ -30,5 +30,5 @@ GROUP BY 1,2,3) as spend
 
 "
 
-mysql -h $server_name  -u $user -p $pass -e "$query" -N
+mysql -h $server_name  -u $user -p$pass -e "$query" -N
 
