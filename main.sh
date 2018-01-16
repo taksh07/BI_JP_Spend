@@ -66,4 +66,4 @@ join -t $'\t' joined_1_2_3_4.csv 5_custom_tracking.csv -a1 | tac > all_done.csv
 #echo "JP_Spend_is_Ready" | mail -s "JP_Spend_Ready" -a /home/tshinagawa/JP_Client_Spend/all_done.csv tshinagawa@marinsoftware.com, jkao@marinsoftware.com 
 
 mytime=`date +%Y-%m-%d:%H:%M:%S`
-echo " JP-Spend-The query has finsihed at $mytime" | mail -s "JPspend finished at $mytime" tshinagawa@marinsoftware.com 
+echo " JP-Spend-The query has finsihed at $mytime" | mail -s "JPspend finished at $mytime" tshinagawa@marinsoftware.com, jkao@marinsoftware.com 
